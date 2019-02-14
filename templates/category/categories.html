@@ -14,95 +14,23 @@
 			data-swiper-breakpoints="true" data-swiper-loop="true" >
 			<div class="swiper-wrapper">
 
-				<div class="swiper-slide">
-					<a class="slider-category" href="#">
-						<div class="blog-image"><img src="{% static "site/images/category-1-400x250.jpg" %}" alt="Blog Image"></div>
+                {% for category in categories %}
+                    <div class="swiper-slide">
+                        <a class="slider-category" href="{{ category.slug }}">
+                            <div class="blog-image"><img src="{{ category.image.url }}" alt="Blog Image"></div>
 
-						<div class="category">
-							<div class="display-table center-text">
-								<div class="display-table-cell">
-									<h3><b>BEAUTY</b></h3>
-								</div>
-							</div>
-						</div>
+                            <div class="category">
+                                <div class="display-table center-text">
+                                    <div class="display-table-cell">
+                                        <h3><b>{{ category.name }}</b></h3>
+                                    </div>
+                                </div>
+                            </div>
 
-					</a>
-				</div><!-- swiper-slide -->
+                        </a>
+				    </div><!-- swiper-slide -->
+                {% endfor %}
 
-				<div class="swiper-slide">
-					<a class="slider-category" href="#">
-						<div class="blog-image"><img src="{% static "site/images/category-2-400x250.jpg" %}" alt="Blog Image"></div>
-
-						<div class="category">
-							<div class="display-table center-text">
-								<div class="display-table-cell">
-									<h3><b>SPORT</b></h3>
-								</div>
-							</div>
-						</div>
-
-					</a>
-				</div><!-- swiper-slide -->
-
-				<div class="swiper-slide">
-					<a class="slider-category" href="#">
-						<div class="blog-image"><img src="{% static "site/images/category-3-400x250.jpg" %}" alt="Blog Image"></div>
-
-						<div class="category">
-							<div class="display-table center-text">
-								<div class="display-table-cell">
-									<h3><b>HEALTH</b></h3>
-								</div>
-							</div>
-						</div>
-
-					</a>
-				</div><!-- swiper-slide -->
-
-				<div class="swiper-slide">
-					<a class="slider-category" href="#">
-						<div class="blog-image"><img src="{% static "site/images/category-4-400x250.jpg" %}" alt="Blog Image"></div>
-
-						<div class="category">
-							<div class="display-table center-text">
-								<div class="display-table-cell">
-									<h3><b>DESIGN</b></h3>
-								</div>
-							</div>
-						</div>
-
-					</a>
-				</div><!-- swiper-slide -->
-
-				<div class="swiper-slide">
-					<a class="slider-category" href="#">
-						<div class="blog-image"><img src="{% static "site/images/category-5-400x250.jpg" %}" alt="Blog Image"></div>
-
-						<div class="category">
-							<div class="display-table center-text">
-								<div class="display-table-cell">
-									<h3><b>MUSIC</b></h3>
-								</div>
-							</div>
-						</div>
-
-					</a>
-				</div><!-- swiper-slide -->
-
-				<div class="swiper-slide">
-					<a class="slider-category" href="#">
-						<div class="blog-image"><img src="{% static "site/images/category-6-400x250.jpg" %}" alt="Blog Image"></div>
-
-						<div class="category">
-							<div class="display-table center-text">
-								<div class="display-table-cell">
-									<h3><b>MOVIE</b></h3>
-								</div>
-							</div>
-						</div>
-
-					</a>
-				</div><!-- swiper-slide -->
 
 			</div><!-- swiper-wrapper -->
 
@@ -112,6 +40,11 @@
 
 	<section class="blog-area section">
 		<div class="container">
+
+            {% if category %}
+                <h3>{{ category.name }}</h3><br><br>
+            {% endif %}
+
 
 			<div class="row">
 
