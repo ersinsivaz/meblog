@@ -1,6 +1,51 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+	<title>{% block title %}Meblog{% endblock %}</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+
+
+	<!-- Font -->
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+	<!-- Stylesheets -->
+
+	<link href="{% static "site/common-css/bootstrap.css" %}"  rel="stylesheet">
+    <link href="{% static "site/common-css/ionicons.css" %}"  rel="stylesheet">
+
+{% block css %}
+
+{%  endblock %}
+
+
+</head>
+
 {% include "shared/header.html" %}
 
 {% block section %}
 {% endblock %}
 
 {% include "shared/footer.html" %}
+
+<!-- SCIPTS -->
+
+	<script src="{% static "site/common-js/jquery-3.1.1.min.js" %}"></script>
+
+	<script src="{% static "site/common-js/tether.min.js" %}" ></script>
+
+	<script src="{% static "site/common-js/bootstrap.js" %}" ></script>
+{% block js %}
+
+{% endblock %}
+
+	<script src="{% static "site/common-js/scripts.js" %}" ></script>
+
+
+</body>
+</html>

@@ -1,6 +1,13 @@
 
 {% extends "shared/layout.html" %}
 {% load static %}
+{% block title %}Ana Sayfa{% endblock %}
+{% block css %}
+    <link href="{% static "site/layout/css/styles.css" %}" rel="stylesheet">
+	<link href="{% static "site/layout/css/responsive.css" %}" rel="stylesheet">
+{% endblock %}
+
+
 
 {% block section %}
     <div class="slider"></div><!-- slider -->
